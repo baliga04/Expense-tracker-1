@@ -12,6 +12,8 @@ connectDB()
 
 const app = express();
 
+app.use(express.json())
+
 app.use('/api/v1/transactions', transactions)
 
 //process is how we access the env allocated literals
