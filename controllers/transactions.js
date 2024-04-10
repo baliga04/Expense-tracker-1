@@ -69,17 +69,16 @@ exports.deleteTransaction = async (req, res, next) => {
           success: false,
           error: 'No transaction found'
         });
-      }else{
-        
-      await transaction.remove();
-  
-      return res.status(200).json({
+      }
+
+      await transaction.remove()
+
+      return res.status(404).json({
         success: true,
         data: {}
       });
-      }
-  
-  
+
+
     } catch (err) {
       return res.status(500).json({
         success: false,
